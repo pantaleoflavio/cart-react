@@ -1,9 +1,12 @@
 import React from "react";
 import { MdDelete } from "react-icons/md";
 import { BiPlus, BiMinus } from "react-icons/bi";
+import { useGlobalContext } from "../context/context";
 
 const CartItem = ({id, name, image, price, countInStock}) => {
-  return <article className="cart-item">
+
+  return (
+  <article className="cart-item">
     <div className="img-container">
       <img src={image} alt={name} className="img"/>
     </div>
@@ -23,7 +26,8 @@ const CartItem = ({id, name, image, price, countInStock}) => {
     <button className="btn icon-btn">
       <MdDelete className="icon minus-icon" />
     </button>
-  </article>;
+  </article>
+  );
 };
 
 export default CartItem;

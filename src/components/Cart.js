@@ -1,10 +1,11 @@
 import React from "react";
-import products from "../products";
 import CartItem from "../components/CartItem";
 import { MdRemoveShoppingCart } from "react-icons/md"
+import { useGlobalContext } from "../context/context";
 
 const Cart = () => {
-
+  const { products } = useGlobalContext();
+  
   return(
   <section className="section-center"
   style={{ marginTop: "2rem"}}
@@ -20,8 +21,7 @@ const Cart = () => {
     </div>
     <hr />
     <section className="cart-section">
-      {
-        products.map((el) => {
+      {products.map((el) => {
           return <CartItem key={el._id} {...el}/>
         })
       }
