@@ -4,7 +4,7 @@ import { MdRemoveShoppingCart } from "react-icons/md"
 import { useGlobalContext } from "../context/context";
 
 const Cart = () => {
-  const { products } = useGlobalContext();
+  const { products, deleteAll } = useGlobalContext();
   
   return(
   <section className="section-center"
@@ -15,7 +15,7 @@ const Cart = () => {
       <h6 className="prd-name">Name</h6>
       <h6>Quantity</h6>
       <h6>Price</h6>
-      <button className="btn icon-btn">
+      <button className="btn icon-btn" onClick={deleteAll}>
         <MdRemoveShoppingCart className="icon minus-icon"/>
       </button>
     </div>
